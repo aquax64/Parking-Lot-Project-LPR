@@ -8,7 +8,7 @@ __First download the libraries required:__
        - sudo apt install g++ make cmake
  - Download the following (from this Repo):
      - openalpr.rar (contains openalpr library) 
-     - opencv.rar (contains opencv library) (yes this file is big)
+     - opencv.rar (contains opencv library) (too big to be on GitHub so I uploaded it to my OneDrive so ask me if you need this or go find the files for opencv (version 3.4.20) and compile it using their directions)
      - runtime_data.rar (contains language files and .conf file)
  - Add both compiled libraries to your libraries
      - Extract both openalpr.rar and opencv.rar somewhere
