@@ -12,9 +12,9 @@ __First download the libraries required:__
      - runtime_data.rar (contains language files and .conf file)
  - Add both compiled libraries to your libraries
      - Extract both openalpr.rar and opencv.rar somewhere
-     - cd \openalpr\src\build\
-     - sudo make install
      - cd \opencv\build\
+     - sudo make install
+     - cd \openalpr\src\build\
      - sudo make install
  - Extract the folder (called runtime_data) from runtime_data.rar and place it anywhere (but copy that path)
  - Move the openalpr.conf file to the same directory as the out file (.out) 
