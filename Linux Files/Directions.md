@@ -2,10 +2,10 @@ If you're compiling with Linux, you need to be very careful about how and where 
 
 __First download the libraries required:__
  - Run the following:
-       sudo apt clean
-       sudo apt update
-       sudo apt upgrade
-       sudo apt install g++
+       - sudo apt clean
+       - sudo apt update
+       - sudo apt upgrade
+       - sudo apt install g++
  - Download the following (from this Repo):
      - alpr_so.rar (contains all alpr.so files)
      - opencv_so.rar (contains all opencv.so files)
