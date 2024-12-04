@@ -12,7 +12,7 @@ __First download the libraries required:__
      - runtime_data.rar (contains language files and .conf file)
  - Add both compiled libraries to your libraries
      - Extract both openalpr.rar and opencv.rar somewhere
-     - cd \opencv\build\
+     - cd \opencv\build\ (These 4 lines are wrong. It won't work. You have to build it yourself. Delete build folder and use cmake to build it)
      - sudo make install
      - cd \openalpr\src\build\
      - sudo make install
