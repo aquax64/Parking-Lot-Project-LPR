@@ -5,12 +5,17 @@ __First download the libraries required:__
        - sudo apt clean
        - sudo apt update
        - sudo apt upgrade
-       - sudo apt install g++
+       - sudo apt install g++ make cmake
  - Download the following (from this Repo):
-     - alpr_so.rar (contains all alpr.so files)
-     - opencv_so.rar (contains all opencv.so files)
+     - openalpr.rar (contains openalpr library) 
+     - opencv.rar (contains opencv library) (yes this file is big)
      - runtime_data.rar (contains language files and .conf file)
- - Extract ALL ".so" files (within the alpr_so.rar and opencv_so.rar) into "/usr/local/lib/"
+ - Add both compiled libraries to your libraries
+     - Extract both openalpr.rar and opencv.rar somewhere
+     - cd \openalpr\src\build\
+     - sudo make install
+     - cd \opencv\build\
+     - sudo make install
  - Extract the folder (called runtime_data) from runtime_data.rar and place it anywhere (but copy that path)
  - Move the openalpr.conf file to the same directory as the out file (.out) 
 
