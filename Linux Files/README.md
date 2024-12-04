@@ -5,7 +5,7 @@ __First download the libraries required:__
   * sudo apt clean
   * sudo apt update
   * sudo apt upgrade
-  * sudo apt install g++ make cmake libtesseract-dev tesseract-ocr liblog4cplus-dev curl
+  * sudo apt install g++ make cmake libtesseract-dev tesseract-ocr liblog4cplus-dev curl libcurl4-openssl-dev
  - Download the following (from this Repo):
      - openalpr.rar (contains openalpr library) 
      - opencv.rar (contains opencv library) (too big to be on GitHub so I uploaded it to my OneDrive so ask me if you need this or go find the files for opencv (version 3.4.20) and compile it using their directions)
