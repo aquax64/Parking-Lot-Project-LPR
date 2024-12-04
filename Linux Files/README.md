@@ -2,10 +2,10 @@ If you're compiling with Linux, you need to be very careful about how and where 
 
 __First download the libraries required:__
  - Run the following:
-       * sudo apt clean
-       * sudo apt update
-       * sudo apt upgrade
-       * sudo apt install g++ make cmake libtesseract-dev tesseract-ocr liblog4cplus-dev curl
+  * sudo apt clean
+  * sudo apt update
+  * sudo apt upgrade
+  * sudo apt install g++ make cmake libtesseract-dev tesseract-ocr liblog4cplus-dev curl
  - Download the following (from this Repo):
      - openalpr.rar (contains openalpr library) 
      - opencv.rar (contains opencv library) (too big to be on GitHub so I uploaded it to my OneDrive so ask me if you need this or go find the files for opencv (version 3.4.20) and compile it using their directions)
