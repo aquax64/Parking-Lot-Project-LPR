@@ -6,6 +6,11 @@ __First download the libraries required:__
   * sudo apt update
   * sudo apt upgrade
   * sudo apt install g++ make cmake libtesseract-dev tesseract-ocr liblog4cplus-dev curl libcurl4-openssl-dev
+
+
+
+********OUT OF DATE********
+FROM **HERE**
  - Download the following (from this Repo):
      - openalpr.rar (contains openalpr library) 
      - opencv.rar (contains opencv library) (too big to be on GitHub so I uploaded it to my OneDrive so ask me if you need this or go find the files for opencv (version 3.4.20) and compile it using their directions)
@@ -18,7 +23,7 @@ __First download the libraries required:__
      - sudo make install
  - Extract the folder (called runtime_data) from runtime_data.rar and place it anywhere (but copy that path)
  - Move the openalpr.conf file to the same directory as the out file (.out) 
-
+TO **HERE**
 
 __TO COMPILE FOR LINUX__
 - use "g++ (name of the source file).cpp -o (name of out file).out -L/usr/local/lib -lopencv_core -lopenalpr"
