@@ -23,6 +23,7 @@ FROM **HERE**
      - sudo make install
  - Extract the folder (called runtime_data) from runtime_data.rar and place it anywhere (but copy that path)
  - Move the openalpr.conf file to the same directory as the out file (.out) 
+
 TO **HERE**
 
 __TO COMPILE FOR LINUX__
