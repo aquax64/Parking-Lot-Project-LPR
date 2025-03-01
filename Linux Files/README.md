@@ -35,7 +35,7 @@ __First download the libraries required:__
   * sudo cp -r /home/tesseract/tesseract/src/ccmain /usr/local/include/tesseract/
   * sudo cp -r /home/tesseract/tesseract/src/ccutil /usr/local/include/tesseract/
     
-  (If the console tells you that it is already there, after running the 2 commands above, do not worry and just continue. If you recieve any errors, contact me and mention that the errors occurred after or before this point)
+  (If the console tells you that it is already there, after running the 2 commands above, do not worry and just continue. If you recieve any errors, contact me and mention the place in the directions where you recieved the errors)
   
   * cd ../../
   * cd opencv-3.4.2
