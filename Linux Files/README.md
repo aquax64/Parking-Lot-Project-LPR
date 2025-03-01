@@ -2,7 +2,7 @@ If you're compiling with Linux, you need to be very careful about how and where 
 
 First (the only website you'll have to go to) go to [HERE](https://github.com/openalpr/openalpr/releases) and download (be very careful here and download the right one) "Source code (tar.gz)" and keep in in downloads for now
 
-**IMPORTANT**: While running these commands do NOT close the console UNLESS you know what you're doing. If you do, contact me on teams and PLEASE preserve the console (this can be done by leaving it as is OR copying everything to a text file). From there, you can shutdown the linux device. (**REMEMBER**: copying in the console is done by RIGHT-CLICKING and clicking COPY because **CTRL^C does NOT work**)
+**IMPORTANT**: While running these commands do NOT close the console UNLESS you know what you're doing. If you do, contact me (Evan) on teams and PLEASE preserve the console (this can be done by leaving it as is OR copying everything to a text file). From there, you can shutdown the linux device. (**REMEMBER**: copying in the console is done by RIGHT-CLICKING and clicking COPY because **CTRL^C does NOT work**)
 
 __First download the libraries required:__
  - Run the following:
