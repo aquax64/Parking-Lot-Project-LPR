@@ -29,14 +29,20 @@ __First download the libraries required:__
   * cmake -D CMAKE_INSTALL_PREFIX=/usr/local -DBUILD_SHARED_LIBS=ON ..
   * make
   * sudo make install
+    
   (HINT: Replace "/home" here)
+  
   * sudo cp -r /home/tesseract/tesseract/src/ccmain /usr/local/include/tesseract/
   * sudo cp -r /home/tesseract/tesseract/src/ccutil /usr/local/include/tesseract/
+    
   (If the console tells you that it is already there, after running the 2 commands above, do not worry and just continue. If you recieve any errors, contact me and mention that the errors occurred after or before this point)
+  
   * cd ../../
   * cd opencv-3.4.2
   * mkdir build && cd build
+    
   (A lot of nonsensical errors tend to happen around this part for me but they may not here)
+
   * cmake -D CMAKE_INSTALL_PREFIX=/usr/local -DTesseract_INCLUDE_DIRS=/usr/local/include/tesseract -DTesseract_INCLUDE_BASEAPI_DIR=/usr/local/include/tesseract -DTesseract_INCLUDE_CCSTRUCT_DIR=/usr/local/include/tesseract/ccstruct -DTesseract_INCLUDE_CCMAIN_DIR=/usr/local/include/tesseract/ccmain -DTesseract_INCLUDE_CCUTIL_DIR=/usr/local/include/tesseract/ccutil -DTesseract_LIBRARIES=/usr/local/lib/libtesseract.so ..
   * make
   * sudo make install
