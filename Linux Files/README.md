@@ -52,6 +52,7 @@ __First download the libraries required:__
 - Extract openalpr.conf to the same directory as your .cpp file (and where your ".out" file will be)
 - Extract the "runtime_data" folder from the "Source code (tar.gz)" file you downloaded at the beginning (if you don't have the file redownload it) and put the "runtime_data" folder in the same directory as your .cpp file
 - Open the openalpr.conf file (if it is blank when you open it, please contact me) and look for "runtime_dir = runtime_data" and change "runtime_data" to the directory that your .cpp file is in and add "/runtime_data" (to include the folder)
+- Go to this (".../runtime_data/ocr/tessdata") directory in the "runtime_data" folder and copy all the ".traineddata" files and paste them in this directory (".../runtime_data/ocr/"). DO NOT DELETE OR MOVE THE FILES IN THIS DIRECTORY BUT COPY THEM!
 
 You're done!
 
