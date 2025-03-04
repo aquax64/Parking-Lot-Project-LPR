@@ -48,7 +48,12 @@ __First download the libraries required:__
   * sudo make install
 - Now, the hard part is over.
 - Create your .cpp file anywhere you want it to be
-- (There is another step with runtime_data but I need to fix it) 
+- Finally, (be careful with the file paths here) download the openalpr-conf.tar.gz file from "Linux Files" in this repo.
+- Extract openalpr.conf to the same directory as your .cpp file (and where your ".out" file will be)
+- Extract the "runtime_data" folder from the "Source code (tar.gz)" file you downloaded at the beginning (if you don't have the file redownload it) and put the "runtime_data" folder in the same directory as your .cpp file
+- Open the openalpr.conf file (if it is blank when you open it, please contact me) and look for "runtime_dir = runtime_data" and change "runtime_data" to the directory that your .cpp file is in and add "/runtime_data" (to include the folder)
+
+You're done!
 
 
 ********OUT OF DATE********
