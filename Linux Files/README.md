@@ -55,24 +55,6 @@ __First download the libraries required:__
 
 You're done!
 
-
-********OUT OF DATE********
-FROM **HERE**
- - Download the following (from this Repo):
-     - openalpr.rar (contains openalpr library) 
-     - opencv.rar (contains opencv library) (too big to be on GitHub so I uploaded it to my OneDrive so ask me if you need this or go find the files for opencv (version 3.4.20) and compile it using their directions)
-     - runtime_data.rar (contains language files and .conf file)
- - Add both compiled libraries to your libraries
-     - Extract both openalpr.rar and opencv.rar somewhere
-     - cd \opencv\build\ (These 4 lines are wrong. It won't work. You have to build it yourself. Delete build folder and use cmake to build it)
-     - sudo make install
-     - cd \openalpr\src\build\
-     - sudo make install
- - Extract the folder (called runtime_data) from runtime_data.rar and place it anywhere (but copy that path)
- - Move the openalpr.conf file to the same directory as the out file (.out) 
-
-TO **HERE**
-
 __TO COMPILE FOR LINUX__
 - use "g++ (name of the source file).cpp -o (name of out file).out -L/usr/local/lib -lopencv_core -lopenalpr"
 - Don't forget the "alpr.h" file (in the same directory as the source file) from the repo (Parking-Lot-Project-LPR/Parking Lot Project/openalpr_64/include/)
