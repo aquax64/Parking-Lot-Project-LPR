@@ -9,7 +9,7 @@ __First download the libraries required:__
    * sudo apt clean
    * sudo apt update
    * sudo apt upgrade
-   * sudo apt install g++ make cmake git build-essential libdc1394-dev liblog4cplus-dev curl libcurl4-openssl-dev openexr libatlas-base-dev libv4l-dev libxvidcore-dev libx264-dev libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev dkms pkg-config libicu-dev libpango1.0-dev libcairo2-dev libpixman-1-dev
+   * sudo apt install g++ make cmake git build-essential libdc1394-dev liblog4cplus-dev curl libcurl4-openssl-dev openexr libatlas-base-dev libv4l-dev libxvidcore-dev libx264-dev libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev dkms libicu-dev libpango1.0-dev libcairo2-dev libpixman-1-dev
 
 
 - Go to a main directory where you want everything to be and for the sake of convience I'm going to call this directory "/home" (**pay attention to this part**) which also includes everything before the "/home" directory so when I mention something like "/home/opencv" this does not literally mean '/home/opencv'. EX: If you choose your "/home" directory as "/Projects/LPR" then you will replace "/home" like this "/home/opencv"->"/Projects/LPR/opencv" and NOT like this "/home/opencv"->"/LPR/opencv"
