@@ -67,7 +67,7 @@ int main()
 
     if (results.plates.size() == 0)
     {
-        std::court << "No license plates found...\n";
+        std::cout << "No license plates found...\n";
         return -1;
     }
 
