@@ -19,8 +19,8 @@ int main()
     using std::chrono::milliseconds;
 
     
-    std::cout << "Loading country: us";
-    std::cout << "Loading openalpr.conf...";
+    std::cout << "Loading country: us\n";
+    std::cout << "Loading openalpr.conf...\n";
     alpr::Alpr openalpr("us", "C:/Users/mraqu/source/repos/OpenALPR Test/OpenALPR Test/libs/openalpr_64/runtime_data/openalpr.conf");
     
     
