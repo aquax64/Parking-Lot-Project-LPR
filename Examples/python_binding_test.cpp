@@ -11,8 +11,9 @@
 //	- pip3 install pybind11
 // 
 // (Replace "-I/usr/include/python3.10 -I/usr/local/lib/python3.10/dist-packages/pybind11/include" with whatever running "python3 -m pybind11 --includes" displays)
+// (Also replace libraries as needed (EX: openalpr source library may be -L/openalpr-2.3.0/src/openalpr instead of -L/openalpr/src/openalpr))
 // USE THIS TO COMPILE IT: 
-//	- g++ python_binding_test.cpp -fPIC -shared -I/usr/include/python3.10 -I/usr/local/lib/python3.10/dist-packages/pybind11/include -o LPR$(python3-config --extension-suffix)
+//	- g++ python_binding_test.cpp -fPIC -shared -I/usr/include/python3.10 -I/usr/local/lib/python3.10/dist-packages/pybind11/include -L/openalpr/src/openalpr -L/usr/local/lib -lopencv_core -lopenalpr -o LPR$(python3-config --extension-suffix)
 
 #include <iostream>
 #include "alpr.h"
