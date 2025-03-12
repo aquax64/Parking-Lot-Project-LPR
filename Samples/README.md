@@ -1,0 +1,3 @@
+These are images given as examples specifically for open ALPR.
+
+USE THIS if no images are working JUST to make sure...
