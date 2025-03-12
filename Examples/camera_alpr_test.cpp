@@ -80,6 +80,12 @@ int main()
         }
     }
 
+    if (results.plates.size() == 0)
+    {
+        std::court << "No license plates found...\n";
+        return -1;
+    }
+
     auto t2 = high_resolution_clock::now();
 
     auto ms_int = duration_cast<milliseconds>(t2 - t1);
