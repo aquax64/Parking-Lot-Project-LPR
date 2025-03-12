@@ -51,7 +51,7 @@ int main()
     alpr::AlprResults results = openalpr.recognize(imagePath);
 
     // Iterate through the results.  There may be multiple plates in an image,
-    // and each plate return sthe top N candidates.
+    // and each plate returns the top N candidates.
     for (int i = 0; i < results.plates.size(); i++)
     {
         alpr::AlprPlateResult plate = results.plates[i];
@@ -63,6 +63,12 @@ int main()
             std::cout << "    - " << candidate.characters << "\t confidence: " << candidate.overall_confidence;
             std::cout << "\t pattern_match: " << candidate.matches_template << std::endl;
         }
+    }
+
+    if (results.plates.size() == 0)
+    {
+        std::court << "No license plates found...\n";
+        return -1;
     }
 
     auto t2 = high_resolution_clock::now();
