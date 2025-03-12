@@ -3,6 +3,16 @@
 
 // Examples found at : https://web.archive.org/web/20200804015455/http://doc.openalpr.com/bindings.html (the link on the github didn't work)
 
+// LOOK HERE VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+// RUN 
+//	- sudo apt-get install python3-dev
+//	- sudo apt-get install pybind11-dev
+//	- sudo apt-get install python3-pip
+//	- pip3 install pybind11
+// 
+// (Replace "-I/usr/include/python3.10 -I/usr/local/lib/python3.10/dist-packages/pybind11/include" with whatever running "python3 -m pybind11 --includes" displays)
+// USE THIS TO COMPILE IT: 
+//	- g++ python_binding_test.cpp -fPIC -shared -I/usr/include/python3.10 -I/usr/local/lib/python3.10/dist-packages/pybind11/include -o LPR$(python3-config --extension-suffix)
 
 #include <iostream>
 #include "alpr.h"
