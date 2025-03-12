@@ -14,6 +14,10 @@
 // (Also replace libraries as needed (EX: openalpr source library may be -L/openalpr-2.3.0/src/openalpr instead of -L/openalpr/src/openalpr))
 // USE THIS TO COMPILE IT: 
 //	- g++ python_binding_test.cpp -fPIC -shared -I/usr/include/python3.10 -I/usr/local/lib/python3.10/dist-packages/pybind11/include -L/openalpr/src/openalpr -L/usr/local/lib -lopencv_core -lopenalpr -o LPR$(python3-config --extension-suffix)
+//
+// TO IMPORT IT IN PYTHON: (either have it in the same directory or somewhere that python will find it)
+// import LPR # or whatever is after "PYBIND11_MODULE(" below
+// LPR.testAlpr() # input and everything in C++ works in python
 
 #include <iostream>
 #include "alpr.h"
