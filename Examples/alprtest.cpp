@@ -10,8 +10,6 @@
 
 #include <chrono>
 
-using namespace std;
-using namespace alpr;
 
 int main()
 {
@@ -21,15 +19,15 @@ int main()
     using std::chrono::milliseconds;
 
     
-    cout << "Loading country: us";
-    cout << "Loading openalpr.conf...";
-    Alpr openalpr("us", "C:/Users/mraqu/source/repos/OpenALPR Test/OpenALPR Test/libs/openalpr_64/runtime_data/openalpr.conf");
+    std::cout << "Loading country: us";
+    std::cout << "Loading openalpr.conf...";
+    alpr::Alpr openalpr("us", "C:/Users/mraqu/source/repos/OpenALPR Test/OpenALPR Test/libs/openalpr_64/runtime_data/openalpr.conf");
     
     
     // Set top N number of plates to return (Default: 10)
     openalpr.setTopN(20);
 
-    cout << "Loading region as 'md' (Maryland)...\n";
+    std::cout << "Loading region as 'md' (Maryland)...\n";
     // Compares plate with region matching pattern
     openalpr.setDefaultRegion("md"); // md (Maryland) region as opposed to ca (California) or ny (New York) (maybe tn works)
     
@@ -37,34 +35,34 @@ int main()
     // Make sure the library is loaded
     if (!openalpr.isLoaded())
     {
-        cerr << "Error loading OpenALPR" << endl;
+        std::cerr << "Error loading OpenALPR" << endl;
         return 1;
     }
 
-    cout << "OpenALPR Loaded\n";
+    std::cout << "OpenALPR Loaded\n";
 
     // Recognize image file...
-    cout << "Input image file... \n";
-    string imagePath;
-    cout << "Path: ";
-    getline(cin, imagePath);
+    std::cout << "Input image file... \n";
+    std::string imagePath;
+    std::cout << "Path: ";
+    std::getline(cin, imagePath);
 
     auto t1 = high_resolution_clock::now();
 
-    AlprResults results = openalpr.recognize(imagePath);
+    alpr::AlprResults results = openalpr.recognize(imagePath);
 
     // Iterate through the results.  There may be multiple plates in an image,
     // and each plate return sthe top N candidates.
     for (int i = 0; i < results.plates.size(); i++)
     {
-        AlprPlateResult plate = results.plates[i];
-        cout << "plate" << i << ": " << plate.topNPlates.size() << " results" << endl;
+        alpr::AlprPlateResult plate = results.plates[i];
+        std::cout << "plate" << i << ": " << plate.topNPlates.size() << " results" << endl;
 
         for (int k = 0; k < plate.topNPlates.size(); k++)
         {
-            AlprPlate candidate = plate.topNPlates[k];
-            cout << "    - " << candidate.characters << "\t confidence: " << candidate.overall_confidence;
-            cout << "\t pattern_match: " << candidate.matches_template << endl;
+            alpr::AlprPlate candidate = plate.topNPlates[k];
+            std::cout << "    - " << candidate.characters << "\t confidence: " << candidate.overall_confidence;
+            std::cout << "\t pattern_match: " << candidate.matches_template << endl;
         }
     }
 
@@ -73,8 +71,8 @@ int main()
     auto ms_int = duration_cast<milliseconds>(t2 - t1);
     duration<double, std::milli> ms_double = t2 - t1;
 
-    cout << ms_int.count() << "ms\n";
-    cout << ms_double.count() << "ms\n";
+    std::cout << ms_int.count() << "ms\n";
+    std::cout << ms_double.count() << "ms\n";
 
     return 0;
 }
