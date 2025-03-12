@@ -7,7 +7,6 @@
 #include <iostream>
 #include "alpr.h"
 #include <string>
-
 #include <chrono>
 
 
