@@ -21,7 +21,7 @@ int main()
     
     std::cout << "Loading country: us\n";
     std::cout << "Loading openalpr.conf...\n";
-    alpr::Alpr openalpr("us", "C:/Users/mraqu/source/repos/OpenALPR Test/OpenALPR Test/libs/openalpr_64/runtime_data/openalpr.conf");
+    alpr::Alpr openalpr("us", "openalpr.conf");
     
     
     // Set top N number of plates to return (Default: 10)
