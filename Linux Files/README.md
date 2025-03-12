@@ -60,7 +60,7 @@ __First download the libraries required:__
 You're done!
 
 __TO COMPILE FOR LINUX__
-- use "g++ (name of the source file).cpp -o (name of out file).out -L/usr/local/lib -lopencv_core -lopenalpr"
+- use "g++ (name of the source file).cpp -o (name of out file).out -L/openalpr-2.3.0/src/openalpr -L/usr/local/lib -lopencv_core -lopenalpr"
 - Don't forget the "alpr.h" file (in the same directory as the source file) from the repo (Parking-Lot-Project-LPR/Parking Lot Project/openalpr_64/include/)
 - Make sure openalpr.conf is in the same directory as both your out file (.out)
 - Edit the openalpr.conf and change the part after "runtime_dir = " to the path of the folder where you put your "runtime_data" folder
