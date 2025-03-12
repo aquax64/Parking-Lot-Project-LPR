@@ -17,7 +17,7 @@ int main()
     int cameraIndex = 0;
     if (!cap.open(cameraIndex))
     {
-        std::cer << "Error: Camera " << cameraIndex << " could not be opened.\n";
+        std::cerr << "Error: Camera " << cameraIndex << " could not be opened.\n";
         return -1;
     }
 
