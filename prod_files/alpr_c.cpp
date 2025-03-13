@@ -46,7 +46,7 @@ struct Plate {
 };
 
 // Returns an error code
-Plate testAlpr(pybind11::array_t<char*> img) {
+Plate testAlpr(const pybind11::array_t<uint8_t img) { // was pybind11::array_t<char*> img
     using std::chrono::high_resolution_clock;
     using std::chrono::duration_cast;
     using std::chrono::duration;
@@ -56,7 +56,7 @@ Plate testAlpr(pybind11::array_t<char*> img) {
 
     pybind11::buffer_info buf = img.request();
 
-    unsigned char* ptr = static_cast<unsigned char*>(buf.ptr);
+    uint8_t* ptr = static_cast<uint8_t*>(buf.ptr);
 
     std::vector<char> imageBytes(ptr, ptr + buf.size);
 
