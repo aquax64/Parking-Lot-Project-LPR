@@ -35,24 +35,24 @@ struct Plate {
 
     Plate()
     {
-    
+
     }
 
-    Plate(char a, float b)
+    Plate(std::string a, float b)
     {
-       character = a;
-       confidence = b;
+        character = a;
+        confidence = b;
     }
 };
 
 // Returns an error code
-Plate testAlpr(auto img) {
+Plate testAlpr(pybind11::array_t<char*> img) {
     using std::chrono::high_resolution_clock;
     using std::chrono::duration_cast;
     using std::chrono::duration;
     using std::chrono::milliseconds;
 
-    std::cout << typeid(img).name() << std::endl;
+    // std::cout << typeid(img).name() << std::endl;
 
     pybind11::buffer_info buf = img.request();
 
@@ -108,8 +108,8 @@ Plate testAlpr(auto img) {
             alpr::AlprPlate candidate = plate.topNPlates[k];
             if (candidate.overall_confidence > 89.0)
             {
-              // returnPlate = candidate;
-              returnPlate = Plate(candidate.characters, candidate.overall_confidence);
+                // returnPlate = candidate;
+                returnPlate = Plate(std::string(candidate.characters), float(candidate.overall_confidence));
             }
             std::cout << "    - " << candidate.characters << "\t confidence: " << candidate.overall_confidence;
             std::cout << "\t pattern_match: " << candidate.matches_template << std::endl;
@@ -134,5 +134,10 @@ Plate testAlpr(auto img) {
 }
 
 PYBIND11_MODULE(LPR, m) {
-	m.def("testAlpr", &testAlpr, "A function to test a python binding for alpr in python");
+    pybind11::class_<Plate>(m, "Plate")
+        .def(pybind11::init<>()) // Make struct be available before function
+        .def_readwrite("character", &Plate::character)
+        .def_readwrite("confidence", &Plate::confidence);
+
+    m.def("testAlpr", &testAlpr, "A function to test a python binding for alpr in python");
 }
