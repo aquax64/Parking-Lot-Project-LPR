@@ -45,8 +45,10 @@ def process_frames():
         if not ret:
             print("Error encoding image!")
             continue
-
-
+        
+        # Ensure it's contiguous for safe memory passing
+        encoded_image = np.ascontiguousarray(encoded_image, dtype=np.uint8)
+        
         # Recognize plates
         result = LPR.testAlpr(encoded_image)
         log_entry = f"Detected Plate: {result.characters} (Confidence: {result.overall_confidence:.2f}%)\n"
