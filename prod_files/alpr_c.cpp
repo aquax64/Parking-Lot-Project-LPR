@@ -46,7 +46,7 @@ struct Plate {
 };
 
 // Returns an error code
-Plate testAlpr(const pybind11::array_t<uint8_t img) { // was pybind11::array_t<char*> img
+Plate testAlpr(const pybind11::array_t<uint8_t> img) { // was pybind11::array_t<char*> img
     using std::chrono::high_resolution_clock;
     using std::chrono::duration_cast;
     using std::chrono::duration;
