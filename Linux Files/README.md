@@ -51,7 +51,7 @@ __First download the libraries required:__
   (A lot of nonsensical errors tend to happen around this part for me but they may not here)
 
   * cmake -D CMAKE_INSTALL_PREFIX=/usr/local -DTesseract_INCLUDE_DIRS=/usr/local/include/tesseract -DTesseract_INCLUDE_BASEAPI_DIR=/usr/local/include/tesseract -DTesseract_INCLUDE_CCSTRUCT_DIR=/usr/local/include/tesseract/ccstruct -DTesseract_INCLUDE_CCMAIN_DIR=/usr/local/include/tesseract/ccmain -DTesseract_INCLUDE_CCUTIL_DIR=/usr/local/include/tesseract/ccutil -DTesseract_LIBRARIES=/usr/local/lib/libtesseract.so ..
-  * make
+  * make -j$(nproc)
   * sudo make install
 - Now, the hard part is over.
 - Create your .cpp file anywhere you want it to be
