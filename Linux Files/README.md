@@ -9,7 +9,7 @@ __First download the libraries required:__
    * sudo apt clean
    * sudo apt update
    * sudo apt upgrade
-   * sudo apt install g++ make cmake git build-essential libdc1394-dev liblog4cplus-dev curl libcurl4-openssl-dev openexr libatlas-base-dev libv4l-dev libxvidcore-dev libx264-dev libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev dkms libicu-dev libpango1.0-dev libcairo2-dev libpixman-1-dev
+   * sudo apt install g++ make cmake git build-essential libdc1394-dev liblog4cplus-dev curl libcurl4-openssl-dev openexr libatlas-base-dev libv4l-dev libxvidcore-dev libx264-dev libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev dkms libicu-dev libpango1.0-dev libcairo2-dev libpixman-1-dev libleptonica-dev
 
 
 - Make sure that g++, make, and cmake run by just running each in the console. If you get the error saying "command not found" then install that one individually and always select "Y" out of "[Y/n]"
