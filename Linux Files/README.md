@@ -1,3 +1,6 @@
+__MANUAL INSTALLATION OF OpenALPR, Tesseract, and OPENCV__
+(If you don't want to install the libraries manually, scroll down to the section labeled "EASY INSTALLATION".)
+
 If you're compiling with Linux, you need to be very careful about how and where you place things.
 
 First (the only website you'll have to go to) go to [HERE](https://github.com/openalpr/openalpr/releases) and download (be very careful here and download the right one) "Source code (tar.gz)" and keep in in downloads for now
@@ -58,6 +61,10 @@ __First download the libraries required:__
 - Go to this (".../runtime_data/ocr/tessdata") directory in the "runtime_data" folder and copy all the ".traineddata" files and paste them in this directory (".../runtime_data/ocr/"). DO NOT DELETE OR MOVE THE FILES IN THIS DIRECTORY BUT COPY THEM!
 
 You're done!
+
+__EASY INSTALLATION__
+
+(W.I.P.)
 
 __TO COMPILE FOR LINUX__
 - use "g++ (name of the source file).cpp -o (name of out file).out -L/openalpr-2.3.0/src/openalpr -L/usr/local/lib -lopencv_core -lopenalpr"
