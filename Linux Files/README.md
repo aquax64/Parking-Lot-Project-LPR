@@ -30,7 +30,7 @@ __First download the libraries required:__
   * cd tesseract
   * mkdir build && cd build
   * cmake -D CMAKE_INSTALL_PREFIX=/usr/local -DBUILD_SHARED_LIBS=ON ..
-  * make
+  * make -j$(nproc)
   * sudo make install
     
   (HINT: Replace "/home" here)
