@@ -65,7 +65,24 @@ You're done!
 
 ## __EASY INSTALLATION__
 
-(W.I.P.)
+- Run the following:
+   * sudo apt clean
+   * sudo apt update
+   * sudo apt upgrade
+   * sudo apt install g++ make cmake git build-essential libdc1394-dev liblog4cplus-dev curl libcurl4-openssl-dev openexr libatlas-base-dev libv4l-dev libxvidcore-dev libx264-dev libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev dkms libicu-dev libpango1.0-dev libcairo2-dev libpixman-1-dev libleptonica-dev
+   * wget https://github.com/aquax64/Parking-Lot-Project-LPR/blob/master/Linux%20Files/Packages/LPR-libraries-001.tar.gz
+   * tar -xvzf LPR-libraries-001.tar.gz
+   * export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+   * sudo dpkg -i tesseract-4.1.1.deb
+   * sudo dpkg -i opencv-3.4.20.deb
+   * sudo dpkg -i openalpr-2.3.0.deb
+   * wget https://raw.github.com/aquax64/Parking-Lot-Project-LPR/master/Linux%20Files/openalpr-conf.tar.gz
+   * tar -xvzf openalpr-conf.tar.gz
+   * wget https://raw.github.com/aquax64/Parking-Lot-Project-LPR/master/Linux%20Files/runtime_data.tar.gz
+   * tar -xvzf runtime_data.tar.gz
+   * wget https://raw.github.com/aquax64/Parking-Lot-Project-LPR/master/Samples/us-1.jpg
+
+Now you're done, and you can use "nano" or "wget" for the alprtest.cpp test file to check it
 
 # __TO COMPILE FOR LINUX__
 - use "g++ (name of the source file).cpp -o (name of out file).out -L/openalpr-2.3.0/src/openalpr -L/usr/local/lib -lopencv_core -lopenalpr"
