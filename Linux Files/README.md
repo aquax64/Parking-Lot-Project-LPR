@@ -1,4 +1,5 @@
-__MANUAL INSTALLATION OF OpenALPR, Tesseract, and OPENCV__
+## __MANUAL INSTALLATION OF OpenALPR, Tesseract, and OPENCV__
+
 (If you don't want to install the libraries manually, scroll down to the section labeled "EASY INSTALLATION".)
 
 If you're compiling with Linux, you need to be very careful about how and where you place things.
@@ -62,11 +63,11 @@ __First download the libraries required:__
 
 You're done!
 
-__EASY INSTALLATION__
+## __EASY INSTALLATION__
 
 (W.I.P.)
 
-__TO COMPILE FOR LINUX__
+# __TO COMPILE FOR LINUX__
 - use "g++ (name of the source file).cpp -o (name of out file).out -L/openalpr-2.3.0/src/openalpr -L/usr/local/lib -lopencv_core -lopenalpr"
 - Don't forget the "alpr.h" file (in the same directory as the source file) from the repo (Parking-Lot-Project-LPR/Parking Lot Project/openalpr_64/include/)
 - If you are getting issues with no results with the license not appearing, don't download the images using SSH or shell and ONLY use ".jpg" files
