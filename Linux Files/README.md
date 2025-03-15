@@ -41,7 +41,7 @@ __First download the libraries required:__
   (If the console tells you that it is already there, after running the 2 commands above, do not worry and just continue. If you recieve any errors, contact me and mention the place in the directions where you recieved the errors)
   
   * cd ../../
-  * cd opencv-3.4.2
+  * cd openalpr
   * mkdir build && cd build
     
   (A lot of nonsensical errors tend to happen around this part for me but they may not here)
