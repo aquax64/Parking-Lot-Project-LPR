@@ -23,7 +23,7 @@ __First download the libraries required:__
   * cd opencv
   * mkdir build && cd build
   * cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules -D BUILD_EXAMPLES=ON -D BUILD_TIFF=ON -D ENABLED_PRECOMPILED_HEADERS=OFF -D WITH_FFMPEG=OFF -D WITH_AVRESAMPLE=OFF  ..
-  * make -j7
+  * make -j$(nproc)
   * sudo make install
   * cd ../../
   * git clone https://github.com/tesseract-ocr/tesseract.git
