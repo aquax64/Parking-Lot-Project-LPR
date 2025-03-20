@@ -82,6 +82,10 @@ You're done!
    * tar -xvzf runtime_data.tar.gz
    * wget https://raw.github.com/aquax64/Parking-Lot-Project-LPR/master/Samples/us-1.jpg
 
+- For python bindings:
+   * sudo apt-get install python3-dev pybind11-dev python3-pip
+   * pip3 install pybind11
+
 Now you're done, and you can use "nano" or "wget" for the alprtest.cpp test file to check it
 
 # __TO COMPILE FOR LINUX__
