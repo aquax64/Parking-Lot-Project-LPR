@@ -26,6 +26,7 @@
 #include <vector>
 #include <pybind11/pybind11.h>
 #include <pybind11/numpy.h>
+#include <opencv2/opencv.hpp>
 
 // namespace py = pybind11;
 
@@ -46,7 +47,7 @@ struct Plate {
 };
 
 // Returns an error code
-Plate testAlpr(const pybind11::array_t<uint8_t> img) { // was pybind11::array_t<char*> img
+Plate testAlpr(const pybind11::array_t<unsigned char> img) { // was pybind11::array_t<char*> img
     using std::chrono::high_resolution_clock;
     using std::chrono::duration_cast;
     using std::chrono::duration;
@@ -56,9 +57,20 @@ Plate testAlpr(const pybind11::array_t<uint8_t> img) { // was pybind11::array_t<
 
     pybind11::buffer_info buf = img.request();
 
-    uint8_t* ptr = static_cast<uint8_t*>(buf.ptr);
+    // uint8_t* ptr = static_cast<uint8_t*>(buf.ptr);
 
-    std::vector<char> imageBytes(ptr, ptr + buf.size);
+
+    int height = buf.shape[0];
+    int width = buf.shape[1];
+    int channels = buf.shape[2];
+
+    cv::Mat matImg(height, width, CV_8UC3, (unsigned char*)buf.ptr);
+
+    cv::imshow("image", matImg);
+    cv::waitKey(0);
+    cv::destroyAllWindows();
+
+    // std::vector<char> imageBytes(ptr, ptr + buf.size);
 
     std::cout << "Loading country: us\n";
     std::cout << "Loading openalpr.conf...\n";
@@ -91,7 +103,8 @@ Plate testAlpr(const pybind11::array_t<uint8_t> img) { // was pybind11::array_t<
     auto t1 = high_resolution_clock::now();
 
     // alpr::AlprResults results = openalpr.recognize(imagePath);
-    alpr::AlprResults results = openalpr.recognize(imageBytes);
+    // alpr::AlprResults results = openalpr.recognize(imageBytes);
+    alpr::AlprResults results = openalpr.recognize(matImg.data, matImg.channels(), matImg.cols, matImg.rows, {});
 
     // alpr::AlprPlate returnPlate = alpr::AlprPlate();
     Plate returnPlate;
