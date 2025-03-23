@@ -52,7 +52,7 @@ try:
         thresh = cv2.dilate(thresh, None, iterations=2)
 
         # Find contours (motion regions)
-        contours, _ = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        _, contours, _ = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         motion_detected = False
 
         for contour in contours:
