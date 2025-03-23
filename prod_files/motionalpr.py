@@ -1,9 +1,12 @@
+import time
 import cv2
 import datetime
 import os
+import numpy as np
+from picamera2 import Picamera2
 from openalpr import Alpr
 
-# Setup
+# Setup directories
 SAVE_DIR = "captured_frames"
 LOG_FILE = "detected_plates.txt"
 os.makedirs(SAVE_DIR, exist_ok=True)
@@ -11,53 +14,51 @@ os.makedirs(SAVE_DIR, exist_ok=True)
 # Initialize OpenALPR
 alpr = Alpr("us", "openalpr.conf", "runtime_data")
 if not alpr.is_loaded():
-    print("[ERROR] Failed to load OpenALPR. Check your config.")
+    print("[ERROR] Failed to load OpenALPR. Check your config paths.")
     exit(1)
-
 print("[INFO] OpenALPR loaded.")
 
-# Initialize camera
-print("[INFO] Starting camera...")
-camera = cv2.VideoCapture(0)
-camera.set(cv2.CAP_PROP_FRAME_WIDTH, 4608)
-camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 2592)
+# Initialize Picamera2
+picam2 = Picamera2()
+camera_config = picam2.create_video_configuration(main={"size": (4608, 2592)})
+picam2.configure(camera_config)
+picam2.start()
+time.sleep(2)
+print("[INFO] Camera started.")
 
-ret, prev_frame = camera.read()
-if not ret:
-    print("[ERROR] Failed to read from camera.")
-    camera.release()
-    alpr.unload()
-    exit(1)
-
-prev_gray = cv2.cvtColor(prev_frame, cv2.COLOR_BGR2GRAY)
-prev_gray = cv2.GaussianBlur(prev_gray, (21, 21), 0)
-
-print("[INFO] Camera warmed up. Watching for motion...")
-
+# Initialize motion detection
+prev_gray = None
 frame_count = 0
 motion_event_count = 0
 
 try:
     while True:
-        ret, frame = camera.read()
-        if not ret:
-            print("[ERROR] Failed to grab frame.")
-            break
+        # Capture current frame
+        frame = picam2.capture_array()
 
+        # Convert to grayscale & blur for motion detection
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         gray = cv2.GaussianBlur(gray, (21, 21), 0)
 
+        # Set up initial previous frame
+        if prev_gray is None:
+            prev_gray = gray
+            print("[INFO] Motion detection primed.")
+            continue
+
+        # Compute difference
         frame_delta = cv2.absdiff(prev_gray, gray)
         thresh = cv2.threshold(frame_delta, 25, 255, cv2.THRESH_BINARY)[1]
         thresh = cv2.dilate(thresh, None, iterations=2)
 
+        # Find contours (motion regions)
         contours, _ = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-
         motion_detected = False
+
         for contour in contours:
             area = cv2.contourArea(contour)
-            if area > 50000:  # You can adjust this threshold
-                print(f"[DEBUG] Motion detected. Contour area: {area}")
+            if area > 50000:
+                print(f"[DEBUG] Motion detected! Contour area: {area}")
                 motion_detected = True
                 break
 
@@ -65,10 +66,9 @@ try:
             timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
             image_path = f"{SAVE_DIR}/motion_{timestamp}.jpg"
             cv2.imwrite(image_path, frame)
-            print(f"[INFO] Motion frame saved: {image_path}")
-            motion_event_count += 1
+            print(f"[INFO] Saved frame to {image_path}")
 
-            # Run ALPR on saved image
+            # Encode and pass to ALPR
             ret, encoded_image = cv2.imencode(".jpg", frame)
             if not ret:
                 print("[ERROR] Failed to encode image for ALPR.")
@@ -87,6 +87,7 @@ try:
             else:
                 print("[INFO] No license plates detected in this frame.")
 
+            motion_event_count += 1
         else:
             print(f"[DEBUG] No motion. Frame #{frame_count}")
 
@@ -97,7 +98,6 @@ except KeyboardInterrupt:
     print("\n[INFO] Stopping...")
 
 # Cleanup
-camera.release()
 alpr.unload()
-cv2.destroyAllWindows()
+picam2.stop()
 print(f"[INFO] Session ended. Total frames: {frame_count}, Motion events: {motion_event_count}")
