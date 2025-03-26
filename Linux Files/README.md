@@ -84,7 +84,7 @@ You're done!
 
 - For python bindings:
    * sudo apt-get install python3-dev pybind11-dev python3-pip
-   * pip3 install pybind11
+   * pip3 install pybind11 --break-system-packages
 
 Now you're done, and you can use "nano" or "wget" for the alprtest.cpp test file to check it
 
