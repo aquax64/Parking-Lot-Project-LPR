@@ -1,0 +1,19 @@
+# =============================
+# config/settings.yaml
+# =============================
+camera:
+  resolution: [1280, 720]
+  warmup: 2
+motion:
+  area_threshold: 50000
+lpr:
+  engine: "hyperlpr3"
+  params:
+    model_path: null  # use default shipped weights
+lots:
+  lot_id: "lot‑red‑1"
+  dedup_seconds: 3
+uploader:
+  api_url: "https://your‑backend.example.com/api/events"
+  batch_size: 10
+  flush_sec: 5

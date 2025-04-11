@@ -1,0 +1,10 @@
+# =============================
+# requirements.txt
+# =============================
+# System packages: libopencv‑dev, libopenblas‑dev, etc.
+pyyaml
+requests
+opencv-python==4.9.0.80
+picamera2
+hyperlpr3 @ git+https://github.com/smartparking‑fork/hyperlpr.git@v3.0.0  # replace with real fork
+# paddleocr / ultralytics only needed when you implement yolo_paddle_engine

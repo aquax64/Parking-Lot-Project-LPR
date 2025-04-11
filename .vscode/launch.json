@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/eligbennett/dev/Parking-Lot-Project-LPR",
-      "program": "/Users/eligbennett/dev/Parking-Lot-Project-LPR/build/Debug/outDebug"
+      "cwd": "/Users/eligbennett/dev/Parking-Lot-Project-LPR/prod_files",
+      "program": "/Users/eligbennett/dev/Parking-Lot-Project-LPR/prod_files/build/Debug/outDebug"
     }
   ]
 }
