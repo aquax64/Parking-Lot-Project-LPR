@@ -71,7 +71,7 @@ You're done!
    * sudo apt upgrade
    * sudo apt install g++ make cmake git build-essential libdc1394-dev liblog4cplus-dev curl libcurl4-openssl-dev openexr libatlas-base-dev libv4l-dev libxvidcore-dev libx264-dev libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev dkms libicu-dev libpango1.0-dev libcairo2-dev libpixman-1-dev libleptonica-dev
    * wget https://raw.github.com/aquax64/Parking-Lot-Project-LPR/master/Linux%20Files/Packages/LPR-libraries-001.tar.gz
-   * tar -xvzf LPR-libraries-001.tar.gz
+   * tar -xvzf LPR-libraries-ARM64-001.tar.gz
    * export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
    * sudo dpkg -i tesseract-4.1.1.deb
    * sudo dpkg -i opencv-3.4.20.deb
